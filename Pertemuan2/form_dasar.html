@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulir Pendaftaran #2</title>
+    <style>
+      body {
+        background-color: honeydew;
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+      }
+      .container {
+        background-color: aliceblue;
+        width: 100%;
+        max-width: 600px;
+        margin-top: 50px;
+        padding: 24px;
+        border-radius: 8px;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      label.main-label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="date"],
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      fieldset {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 12px 15px;
+        margin: 0;
+      }
+      legend {
+        font-weight: bold;
+        color: #333;
+        padding: 0 5px;
+      }
+      .option-group {
+        display: flex;
+        gap: 12px;
+        margin-top: 5px;
+      }
+      .option-group.vertical {
+        flex-direction: column;
+      }
+      .option-item {
+        display: flex;
+        align-items: center;
+      }
+      .option-item input {
+        margin-right: 10px;
+        cursor: pointer;
+      }
+      .option-item label {
+        cursor: pointer;
+      }
+      button {
+        width: 100%;
+        padding: 12px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="" method="post">
+        <div class="form-group">
+          <label class="main-label" for="first_name">Nama Lengkap</label>
+          <input
+            type="text"
+            name="first_name"
+            id="first_name"
+            placeholder="Isi Nama Anda!"
+            required />
+        </div>
+        <div class="form-group">
+          <label class="main-label" for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Isi Email Anda!"
+            required />
+        </div>
+        <div class="form-group">
+          <label class="main-label" for="Tanggal_Lahir">Tanggal Lahir</label>
+          <input type="date" name="Tanggal_Lahir" id="Tanggal_Lahir" required />
+        </div>
+        <div class="form-group">
+          <fieldset>
+            <legend>Jenis Kelamin</legend>
+            <div class="option-group">
+              <div class="option-item">
+                <input
+                  type="radio"
+                  name="Jenis_Kelamin"
+                  id="laki_laki"
+                  value="Laki-laki"
+                  required />
+                <label for="laki_laki">Laki-laki</label>
+              </div>
+              <div class="option-item">
+                <input
+                  type="radio"
+                  name="Jenis_Kelamin"
+                  id="perempuan"
+                  value="Perempuan" />
+                <label for="perempuan">Perempuan</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div class="form-group">
+          <label class="main-label" for="Agama">Agama</label>
+          <select name="Agama" id="Agama" required>
+            <option value="" disabled selected>-- PILIH AGAMA ANDA --</option>
+            <option value="Islam">Islam</option>
+            <option value="Kristen">Kristen</option>
+            <option value="Katolik">Katolik</option>
+            <option value="Hindu">Hindu</option>
+            <option value="Buddha">Buddha</option>
+            <option value="Khonghucu">Khonghucu</option>
+            <option value="Lainnya">Lainnya</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <fieldset>
+            <legend>Hobi</legend>
+            <div class="option-group vertical">
+              <div class="option-item">
+                <input
+                  type="checkbox"
+                  name="Hobi[]"
+                  id="menggambar"
+                  value="menggambar" />
+                <label for="menggambar">Menggambar</label>
+              </div>
+              <div class="option-item">
+                <input
+                  type="checkbox"
+                  name="Hobi[]"
+                  id="bernyanyi"
+                  value="bernyanyi" />
+                <label for="bernyanyi">Bernyanyi</label>
+              </div>
+              <div class="option-item">
+                <input
+                  type="checkbox"
+                  name="Hobi[]"
+                  id="mancing"
+                  value="mancing" />
+                <label for="mancing">Mancing</label>
+              </div>
+              <div class="option-item">
+                <input
+                  type="checkbox"
+                  name="Hobi[]"
+                  id="main_bola"
+                  value="main_bola" />
+                <label for="main_bola">Main Bola</label>
+              </div>
+              <div class="option-item">
+                <input
+                  type="checkbox"
+                  name="Hobi[]"
+                  id="berenang"
+                  value="berenang" />
+                <label for="berenang">Berenang</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <button type="submit">Kirim</button>
+      </form>
+    </div>
+  </body>
+</html>
