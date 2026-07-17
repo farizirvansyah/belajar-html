@@ -51,5 +51,17 @@ nav a:hover {
 .img-profile {
   height: 150px;
   width: 150px;
-  border-radius: 50%;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.content {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 40px;
+  border-radius: 10px;
+  width: 65%;
+}
+.content h1 {
+  font-size: 3rem;
 }
