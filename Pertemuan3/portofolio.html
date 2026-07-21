@@ -1,45 +1,118 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fariz Irvansyah</title>
-    <link rel="stylesheet" href="style-portofolio.css" />
-  </head>
-  <body>
-    <header class="navbar">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fariz Irvansyah</title>
+  <link rel="stylesheet" href="style-portofolio.css" />
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="nav-container">
       <h2 class="logo">Portofolio</h2>
-      <nav>
-        <ul>
-          <a href="portofolio.html">Home</a>
-          <a href="#About">About</a>
-          <a href="#Skill">Skill</a>
-          <a href="#Contact">Contact</a>
-        </ul>
+      <button onclick="toggleMenu()">☰</button>
+      <nav id="menu">
+        <a href="#home">Home</a>
+        <a href="#ability">Ability</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </nav>
-    </header>
-    <section id="Home" class="parallax bg-1">
-      <div class="content">
-        <img
-          class="img-profile"
-          src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070"
-          alt="laptop"
-          width="500" />
-        <h1>Halo, Fariz Irvansyah</h1>
-        <p>Web Programming</p>
+    </div>
+
+  </header>
+  <section id="Home" class="parallax bg-1">
+    <div class="content">
+      <img class="img-profile" src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070"
+        alt="laptop" width="500" />
+      <h1>Halo, Fariz Irvansyah</h1>
+      <p>Web Programming</p>
+    </div>
+  </section>
+  <section id="ability" class="normal-section">
+    <div class="container">
+      <h2>Keahlian Saya</h2>
+      <div class="wraper">
+        <div class="ability">
+          <h3>My Skills</h3>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>C++</li>
+          </ul>
+        </div>
+        <div class="ability">
+          <h3>My Experiences</h3>
+          <ul>
+            <li>Robot Triathlon based on ESP32</li>
+            <li>Penghitung pengunjung based on Arduino Uno</li>
+            <li>Light Detector Robot based on Arduino Uno </li>
+            <li>Automatic Roof based on STM32</li>
+            <li>Up Down Counter</li>
+            <li>Alarm Cahaya</li>
+          </ul>
+        </div>
       </div>
-    </section>
-    <section id="About" class="parallax bg-1">
-      <h1>About Me</h1>
-      <hr />
-      <table>
-        <tr>
-          <th>Kolom 1</th>
-          <th>Kolom 2</th>
-        </tr>
-      </table>
-    </section>
-    <section id="Skill" class="parallax bg-1"></section>
-    <section id="Contact" class="parallax bg-1"></section>
-  </body>
+    </div>
+
+  </section>
+
+  <section id="about" class="parallax bg-2">
+    <div class="content">
+      <h2>Tentang Saya</h2>
+      <div class="gallery">
+        <figure>
+          <img src="https://i.pinimg.com/736x/c0/f1/e0/c0f1e06e23bf1964596ca2ac5377eb52.jpg" alt="">
+          <figcaption> Pisang</figcaption>
+        </figure>
+        <figure>
+          <img src="https://i.pinimg.com/736x/6c/59/ec/6c59ec2c11ce4d9d3c7b7c6fd93635b8.jpg" alt="">
+          <figcaption>
+            Naga</figcaption>
+        </figure>
+        <figure>
+          <img src="https://i.pinimg.com/736x/86/8e/20/868e20bdf6b00b4b48c3faef833741bd.jpg" alt="">
+          <figcaption>Anggur</figcaption>
+        </figure>
+        <figure>
+          <img src="https://i.pinimg.com/736x/b4/98/69/b498699725311d1841f1245fdfe40b61.jpg" alt="">
+          <figcaption>Stroberi
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="normal-section">
+    <div class="container">
+      <h2>Hubungi Saya</h2>
+      <p>Tertarik bekerja dengan saya? silahkan kirim pesan melalui email</p>
+
+      <form class="contact-form" action="#" method="POST">
+        <div class="input-group">
+          <label for="email">Alamat Email</label>
+          <input type="email" id="email" name="email" placeholder="contoh@email.com" required>
+        </div>
+
+        <div class="input-group">
+          <label for="pesan">Pesan</label>
+          <input type="tel" id="peasn" name="pesan" placeholder="isi pesannya" required>
+        </div>
+
+        <button type="submit" class="btn-submit">Kirim Pesan</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show")
+    }
+  </script>
+
+
+</body>
+
 </html>

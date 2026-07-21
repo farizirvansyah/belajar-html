@@ -5,6 +5,7 @@ html {
   color: blue;
   height: 100%;
   line-height: 1.6;
+  scroll-behavior: smooth;
 }
 .navbar {
   background-color: rgba(0, 0, 0, 0.7);
@@ -13,11 +14,12 @@ html {
   justify-content: space-between;
   display: flex;
   align-items: center;
-  padding: 0 0 0 16px;
+  padding-left: 10px;
 }
-
 nav {
-  padding: 0 32px 0 0;
+  padding-right: 35px;
+  display: flex;
+  gap: 15px;
 }
 
 nav a {
@@ -26,16 +28,24 @@ nav a {
   font-weight: bold;
   transition: 0.3s;
   color: honeydew;
+  padding-right: 10px;
 }
 
 nav a:hover {
   color: blue;
 }
 
+.logo {
+  color: white;
+}
+
 .bg-1 {
   background-image: url(https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070);
 }
 
+.bg-2 {
+  background-image: url(https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070);
+}
 .parallax {
   height: 100%;
   display: flex;
@@ -47,21 +57,215 @@ nav a:hover {
   background-size: cover;
   background-attachment: fixed;
 }
-
 .img-profile {
   height: 150px;
   width: 150px;
   border-radius: 100%;
   object-fit: cover;
 }
-
 .content {
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
+  background-color: oklab(86.8% -0.01955 -0.006);
+  color: rgb(0, 0, 0);
   padding: 40px;
-  border-radius: 10px;
-  width: 65%;
+  border-radius: 60px;
+  width: 70%;
 }
 .content h1 {
   font-size: 3rem;
 }
+.normal-section {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: rgb(128, 104, 0);
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.wraper {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.ability {
+  border: 1px solid #333;
+  padding: 10px;
+  border-radius: 10px;
+  width: 380px;
+  height: 380px;
+  text-align: left;
+}
+.ability h3 {
+  text-align: center;
+}
+
+.gallery {
+  gap: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+figure img {
+  width: 150px;
+  height: 150px;
+  border-radius: 6px;
+  object-fit: cover;
+  border-radius: 100px;
+}
+figure {
+  width: 90%;
+  transition: 0.3s;
+  background-color: white;
+  color: #333;
+  border-radius: 6px;
+  padding: 10px 10px 60px 10px;
+}
+
+figure:hover {
+  transform: scale(2.05);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 5px 40px; */
+}
+
+.nav-container button {
+  display: none;
+}
+
+/* Ukuran Tablet */
+@media (max-width: 1200px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* Ukuran HP*/
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  .nav-container {
+    margin-left: auto;
+    margin-right: 20px;
+  }
+
+  .content {
+    background-color: oklab(86.8% -0.01955 -0.006);
+    color: rgb(0, 0, 0);
+    padding: 40px;
+    border-radius: 60px;
+    height: 850px;
+    width: 40%;
+  }
+  figure {
+    width: 50%;
+    transition: 0.3s;
+    background-color: white;
+    color: #333;
+    border-radius: 6px;
+    padding: 10px 10px 35px 10px;
+  }
+  figure img {
+    width: 100%;
+    height: 90px;
+    border-radius: 6px;
+    object-fit: cover;
+    border-radius: 100px;
+  }
+}
+.nav-container button {
+  display: block;
+}
+nav {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 200px;
+  padding: 10px;
+  top: 55px;
+  right: 0;
+}
+nav.show {
+  display: flex;
+}
+
+.contact-form {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 50px;
+  border-radius: 15px;
+  max-width: 500px;
+  margin: 30px auto 0 auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.contact-form .input-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+
+.contact-form input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.contact-form input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-form input:focus {
+  outline: none;
+  border-color: rgb(130, 248, 248);
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 8px rgba(130, 248, 248, 0.4);
+}
+
+.btn-submit {
+  width: 100;
+  padding: 12px;
+  background-color: rgb(130, 248, 248);
+  color: #333;
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: rgb(90, 210, 210);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(130, 248, 248, 0.3);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+/* figure img{
+    width: 150px;
+    height: 150px;
+    border-radius: 6px;
+    object-fit: cover;
+    border-radius: 100px;
+} */
