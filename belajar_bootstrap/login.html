@@ -26,7 +26,7 @@
 </head>
 
 <body>
-    <div class="container bg-white shadow-sm">
+    <div class="container d-flex flex-column bg-white shadow-sm min-vh-100">
         <div class="row py-2 text-center align-items-center">
             <div class="col-2">
                 <img src="assets/logo_ppkdjp.jpg" width="118" alt="ppkdjp" class="img-fluid"></img>
@@ -43,7 +43,8 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg bg-primary bg-opacity-50 rounded sticky-top">
             <div class="container-fluid">
-                <a class="navbar-brand fw-bold text text-light" href="#"><i class="bi bi-book-half"></i> PPKD Jakarta
+                <a class="navbar-brand fw-bold text text-light" href="https://www.instagram.com/farizirvansyah" target="_blank"><i
+                        class="bi bi-book-half"></i> PPKD Jakarta
                     Pusat
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -67,45 +68,55 @@
             Datang di Pusat Pelatihan Kerja Daerah — Jakarta Pusat</marquee>
         <!-- Login -->
         <div class="container mt-4">
-            <form>
-                <!-- Email -->
-                <div class="mb-3 row">
-                    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-10">
-                        <input type="email" class="form-control" id="staticEmail" placeholder="email@example.com">
-                    </div>
-                </div>
+            <div class="card shadow-sm mx-auto" style="max-width: 500px;">
+                <div class="card-body p-4">
+                    <h3 class="card-title text-center mb-4">Masuk</h3>
 
-                <!-- Password -->
-                <div class="mb-3 row">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-10">
-                        <input type="password" id="inputPassword" class="form-control"
-                            aria-describedby="passwordHelpBlock">
-                        <div id="passwordHelpBlock" class="form-text mt-2">
-                            Your password must be 8-20 characters long, contain letters and numbers, and must not
-                            contain spaces, special characters, or emoji.
+                    <form>
+                        <!-- Email -->
+                        <div class="mb-3 row">
+                            <label for="staticEmail" class="col-sm-3 col-form-label">Email</label>
+                            <div class="col-sm-9">
+                                <input type="email" class="form-control" id="staticEmail"
+                                    placeholder="email@example.com" required>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Button -->
-                <div class="row">
-                    <div class="col-sm-10 offset-sm-2">
-                        <button type="submit" class="btn btn-primary">Masuk</button>
-                    </div>
+                        <!-- Password -->
+                        <div class="mb-3 row">
+                            <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
+                            <div class="col-sm-9">
+                                <input type="password" id="inputPassword" class="form-control"
+                                    aria-describedby="passwordHelpBlock" required>
+                                <div id="passwordHelpBlock" class="form-text mt-2 small text-muted">
+                                    Your password must be 8-20 characters long, contain letters and numbers, and must
+                                    not contain spaces, special characters, or emoji.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Button -->
+                        <div class="row mt-4">
+                            <div class="col-sm-9 offset-sm-3">
+                                <button type="submit" class="btn btn-primary w-100">Masuk</button>
+                            </div>
+                        </div>
+                    </form>
+
                 </div>
-            </form>
+            </div>
         </div>
+
         <hr>
-        <footer class="bg-primary bg-opacity-75 text-white p-3">
+        <footer class="bg-primary bg-opacity-75 text-white p-3 mt-auto">
             <div class="row">
                 <div class="col-6 text-start">
-                    <a href="https://www.linkedin.com/in/farizirvansyah"
-                        class="text-white text-decoration-none" target="_blank">Copyright &copy; PPKD - JAKARTA PUSAT</a>
+                    <a href="https://www.linkedin.com/in/farizirvansyah" class="text-white text-decoration-none"
+                        target="_blank">Copyright &copy; PPKD - JAKARTA PUSAT</a>
                 </div>
                 <div class="col-6 text-end">
-                    <a href="https://www.instagram.com/farizirvansyah" class="text-white text-decoration-none" target="_blank">Privacy
+                    <a href="https://www.instagram.com/farizirvansyah" class="text-white text-decoration-none"
+                        target="_blank">Privacy
                         Policy</a>
                 </div>
             </div>
