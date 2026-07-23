@@ -1,60 +1,11 @@
 <!DOCTYPE html>
-<html lang="id">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator 2 Input</title>
+    <title>Document</title>
 </head>
-
 <body>
-    <form action="" method="post" onsubmit="return false">
-        <input type="number" id="angka1" placeholder="Angka pertama">
-
-        <select id="operator" style="text-align: center;" required>
-            <option value="">-</option>
-            <option value="+">Tambah (+)</option>
-            <option value="-">Kurang (-)</option>
-            <option value="*">Kali (*)</option>
-            <option value="/">Bagi (/)</option>
-        </select>
-
-        <input type="number" id="angka2" placeholder="Angka kedua">
-
-        <button onclick="hitung()">Hitung</button>
-    </form>
-    <h1 id="hasil">Hasil: -</h1>
-    <script>
-        function hitung() {
-            let num1 = parseFloat(document.getElementById('angka1').value);
-            let num2 = parseFloat(document.getElementById('angka2').value);
-            let op = document.getElementById('operator').value;
-            let hasil;
-
-            if (isNaN(num1) || isNaN(num2)) {
-                alert("Masukkan angka terlebih dahulu!");
-                return;
-            }
-
-            if (op === '+') hasil = num1 + num2;
-            else if (op === '-') hasil = num1 - num2;
-            else if (op === '*') hasil = num1 * num2;
-            else if (op === '/') {
-                if (num2 === 0) {
-                    alert("Tidak bisa membagi dengan nol!");
-                    return;
-                }
-                hasil = num1 / num2;
-            }
-            else {
-                hasil = 0;
-            }
-
-            // Menampilkan hasil
-            document.getElementById('hasil').innerHTML = `Hasil: <b>${hasil}</b>`;
-        }
-    </script>
-
+    
 </body>
-
 </html>

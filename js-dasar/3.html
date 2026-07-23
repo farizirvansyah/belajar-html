@@ -1,44 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator</title>
 </head>
-<body>
-    <input type="number" id="angka1">
-    <input type="number" id="angka2">
-    <button onclick="hasilJumlah()">+</button>
-    <button onclick="hasilKurang()">-</button>
-    <button onclick="hasilKali()">*</button>
-    <button onclick="hasilBagi()">/</button>
-    <p id="hasil">Hasil = 0</p>
 
+<body>
+    <form action="" method="post" onsubmit="return false">
+        <input type="number" id="angka1" placeholder="Angka pertama">
+
+        <select id="operator" style="text-align: center;" required>
+            <option value="">-</option>
+            <option value="+">Tambah (+)</option>
+            <option value="-">Kurang (-)</option>
+            <option value="*">Kali (*)</option>
+            <option value="/">Bagi (/)</option>
+        </select>
+
+        <input type="number" id="angka2" placeholder="Angka kedua">
+
+        <button onclick="hitung()">Hitung</button>
+    </form>
+    <h1 id="hasil">Hasil: -</h1>
     <script>
-        function hasilJumlah() {
-            let nomor1 = parseFloat(document.getElementById("angka1").value);
-            let nomor2 = parseFloat(document.getElementById("angka2").value);
-            const hasilJumlah = nomor1 + nomor2;
-            document.getElementById("hasil").innerHTML = `Hasil = ${hasilJumlah}`;
-        }
-        function hasilKurang() {
-            let nomor1 = parseFloat(document.getElementById("angka1").value);
-            let nomor2 = parseFloat(document.getElementById("angka2").value);
-            const hasilKurang = nomor1 - nomor2;
-            document.getElementById("hasil").innerHTML = `Hasil = ${hasilKurang}`;
-        }
-        function hasilKali() {
-            let nomor1 = parseFloat(document.getElementById("angka1").value);
-            let nomor2 = parseFloat(document.getElementById("angka2").value);
-            const hasilKali = nomor1 * nomor2;
-            document.getElementById("hasil").innerHTML = `Hasil = ${hasilKali}`;
-        }
-        function hasilBagi() {
-            let nomor1 = parseFloat(document.getElementById("angka1").value);
-            let nomor2 = parseFloat(document.getElementById("angka2").value);
-            const hasilBagi = nomor1 / nomor2;
-            document.getElementById("hasil").innerHTML = `Hasil = ${hasilBagi}`;
+        function hitung() {
+            let nomor1 = parseFloat(document.getElementById('angka1').value);
+            let nomor2 = parseFloat(document.getElementById('angka2').value);
+            let opt = document.getElementById('operator').value;
+            let hasil;
+
+            if (isNaN(nomor1) || isNaN(nomor2)) {
+                alert("Masukkan angka terlebih dahulu!");
+                return;
+            }
+
+            /* Struktur if-else adalah cara program menguji sebuah kondisi. Jika kondisi itu benar (true)
+             */
+
+            /* if (opt === '+') hasil = nomor1 + nomor2;
+            else if (opt === '-') hasil = nomor1 - nomor2;
+            else if (opt === '*') hasil = nomor1 * nomor2;
+            else if (opt === '/') {
+                // if (nomor2 === 0) {
+                //     alert("Tidak bisa membagi dengan nol!");
+                //     return;
+                // }
+                hasil = (nomor1 === 0 && nomor2 === 0) ? "0 tidak bisa dibagi dengan 0" : (nomor2 === 0) ? "Error" :
+                    nomor1 / nomor2;
+            } else {
+                hasil = 0;
+            }
+                */
+
+            // Switch Case
+            switch (opt) {
+                case "+":
+                    hasil = nomor1 + nomor2;
+                    break;
+                case "-":
+                    hasil = nomor1 - nomor2;
+                    break;
+                case "*":
+                    hasil = nomor1 * nomor2;
+                    break;
+                case "/":
+                    hasil = (nomor1 === 0 && nomor2 === 0) ? "0 tidak bisa dibagi dengan 0" : (nomor2 === 0) ? "Error" :
+                        nomor1 / nomor2;
+                    break;
+            }
+
+            document.getElementById('hasil').innerHTML = `Hasil: <b>${hasil}</b>`;
         }
     </script>
+
 </body>
+
 </html>
