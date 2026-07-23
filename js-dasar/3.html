@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+</head>
+<body>
+    <input type="number" id="angka1">
+    <input type="number" id="angka2">
+    <button onclick="hasilJumlah()">+</button>
+    <button onclick="hasilKurang()">-</button>
+    <button onclick="hasilKali()">*</button>
+    <button onclick="hasilBagi()">/</button>
+    <p id="hasil">Hasil = 0</p>
+
+    <script>
+        function hasilJumlah() {
+            let nomor1 = parseFloat(document.getElementById("angka1").value);
+            let nomor2 = parseFloat(document.getElementById("angka2").value);
+            const hasilJumlah = nomor1 + nomor2;
+            document.getElementById("hasil").innerHTML = `Hasil = ${hasilJumlah}`;
+        }
+        function hasilKurang() {
+            let nomor1 = parseFloat(document.getElementById("angka1").value);
+            let nomor2 = parseFloat(document.getElementById("angka2").value);
+            const hasilKurang = nomor1 - nomor2;
+            document.getElementById("hasil").innerHTML = `Hasil = ${hasilKurang}`;
+        }
+        function hasilKali() {
+            let nomor1 = parseFloat(document.getElementById("angka1").value);
+            let nomor2 = parseFloat(document.getElementById("angka2").value);
+            const hasilKali = nomor1 * nomor2;
+            document.getElementById("hasil").innerHTML = `Hasil = ${hasilKali}`;
+        }
+        function hasilBagi() {
+            let nomor1 = parseFloat(document.getElementById("angka1").value);
+            let nomor2 = parseFloat(document.getElementById("angka2").value);
+            const hasilBagi = nomor1 / nomor2;
+            document.getElementById("hasil").innerHTML = `Hasil = ${hasilBagi}`;
+        }
+    </script>
+</body>
+</html>

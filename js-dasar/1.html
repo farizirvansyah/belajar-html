@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Dasar</title>
+
 </head>
+
 <body>
     <script>
         // Variabel = penampung value / nilai
@@ -12,10 +15,74 @@
         // var = nilainya bisa diubah
         // let = nilainya bisa diubah
         // const = nilainya tetap
-        const nama = "Fariz Irvansyah";
-        let usia = 25;
-        console.log(nama)
-        console.log(usia)
+        // const nama = "Fariz Irvansyah";
+        // let usia = 25;
+        // console.log(nama)
+        // console.log(usia)
+        // Object atau Array
+        const daftarBuku = [{
+                id: 1,
+                judul: "Hari-hari Belajar",
+                stock: 5
+            },
+            {
+                id: 2,
+                judul: "Mari Belajar Coding",
+                stock: 6
+            }
+        ];
+        daftarBuku.push({
+            id: 3,
+            judul: "Komik Sinchan",
+            stock: 7
+        });
+
+        // FOR
+        console.log(`Belajar perulangan FOR `)
+        for (let i = 0; i < daftarBuku.length; i++) {
+            console.log(`index ke - ${i} ${daftarBuku[i].judul} \nID: ${daftarBuku[i].id}, Judul: ${daftarBuku[i].judul}, Stok: ${daftarBuku[i]
+                .stock}`);
+        }
+        daftarBuku.forEach(buku => console.log(buku));
+        // console.log(`${daftarBuku[0]}\n${daftarBuku[1]}\n${daftarBuku[2]}\n${daftarBuku[3]}`)
+        // console.log(daftarBuku.join('\n'));
+        // console.log(daftarBuku[0])
+        // console.log(daftarBuku[1])
+        // console.log(daftarBuku[2])
+        // console.log(daftarBuku[3])
+
+        // Concat
+        const namaDepan = "Sule";
+        const namaBelakang = "Raharjo";
+        // console.log(namaDepan + namaBelakang);
+        const gabungan = namaDepan + " " + namaBelakang;
+        const gabungin = `${namaDepan} ${namaBelakang}`;
+        console.log(`${gabungan}\n${gabungin}`);
+
+        // **, *, /, +, -
+        angka1 = 15;
+        angka2 = 50;
+        let hasilPangkat = angka1 ** angka2;
+        let hasilKali = angka1 * angka2;
+        let hasilBagi = angka1 / angka2;
+        let hasilTambah = angka1 + angka2;
+        let hasilKurang = angka1 - angka2;
+        const seluruhPerhitungan =
+            `Hasil Pangkat ** = ${hasilPangkat}\nHasil Kali * = ${hasilKali}\nHasil Bagi / = ${hasilBagi}\nHasil Penjumlahan + = ${hasilTambah}\nHasil Pengurangan - = ${hasilKurang}`;
+        console.log(seluruhPerhitungan)
+
+        let umur = "35.5";
+        let parsing = parseFloat(umur);
+        console.log(`${umur+8}\n${parsing+8}`);
+
+        // JSON = Javascript Object Notation
+        // JSON.parse
+        let dataDariServer = '{"nama": "Bono", "umur" : 40}';
+        console.log(dataDariServer.nama);
+        let dataUser = JSON.parse(dataDariServer);
+        console.log(dataUser);
+
     </script>
 </body>
+
 </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar JS</title>
+</head>
+<body>
+    <input type="text" id="text2">
+    <button onclick="tampil()">Klik</button>
+    <p id="textnya"></p>
+
+    <script>
+        document.getElementById("textnya").innerHTML = "Ini sedang belajar Java Script";
+        document.getElementById("text2").value = "Ini value input";
+        document.querySelector("text2").value = "Ini value input";
+        function tampil() {
+            let inputan = document.getElementById("text2").value;
+            // console.log(inputan);
+            document.getElementById("textnya").innerHTML = inputan;
+        }
+    </script>
+</body>
+</html>
