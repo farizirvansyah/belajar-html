@@ -8,7 +8,8 @@
 </head>
 
 <body>
-    <form action="" method="post" onsubmit="return false">
+    <form action="" method="post" >
+        <!-- onsubmit="return false" -->
         <input type="number" id="angka1" placeholder="Angka pertama">
 
         <select id="operator" style="text-align: center;" required>
@@ -21,11 +22,17 @@
 
         <input type="number" id="angka2" placeholder="Angka kedua">
 
-        <button onclick="hitung()">Hitung</button>
+        <button id="btn" >Hitung</button>
+        <!-- onclick="hitung()" -->
     </form>
     <h1 id="hasil">Hasil: -</h1>
     <script>
-        function hitung() {
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", hitung);
+
+        function hitung(e) {
+            // event.preventDefault(); // Mencegah agar web browser melakukan refresh otomatis
+            e.preventDefault(); // Mencegah agar web browser melakukan refresh otomatis
             let nomor1 = parseFloat(document.getElementById('angka1').value);
             let nomor2 = parseFloat(document.getElementById('angka2').value);
             let opt = document.getElementById('operator').value;

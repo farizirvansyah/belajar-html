@@ -1,11 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pilih Tema</title>
 </head>
-<body>
-    
+
+<body class="bdy">
+    <form action="" method="post">
+        <select name="" id="pilih-tema">
+            <option value=""></option>
+            <option value="terang">Kuning</option>
+            <option value="gelap">Hitam</option>
+            <option value="biru">Biru</option>
+        </select>
+        <button type="submit" id="form-tema">Ganti Warnanya</button>
+    </form>
+
+    <p id="sambutan">Putih sekali</p>
+
+    <script>
+        let form_tema = document.getElementById("form-tema");
+        let pilih_tema = document.getElementById("pilih-tema");
+        const body = document.querySelector(".bdy");
+
+        let sambutan;
+
+        form_tema.addEventListener("click", function (e) {
+            e.preventDefault();
+            let pilihTemanya = pilih_tema.value;
+
+            if (pilihTemanya == "terang") {
+                body.style.backgroundColor = "yellow";
+                document.getElementById('sambutan').innerHTML = `<b style="color: black;">Selamat Siang, Terang Sekaliiiiii</b>`;
+            } else if (pilihTemanya == "gelap") {
+                body.style.backgroundColor = "black";
+                document.getElementById('sambutan').innerHTML = `<b style="color: white;">Selamat Siang, Gelap Sekaliiiiii</b>`;
+            } else if (pilihTemanya == "biru") {
+                body.style.backgroundColor = "blue";
+                document.getElementById('sambutan').innerHTML = `<b style="color: white;">Selamat Siang, Biru Sekaliiiiii</b>`;
+            }
+        });
+    </script>
 </body>
+
 </html>
