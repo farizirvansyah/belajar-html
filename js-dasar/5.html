@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paket Pengirman</title>
+</head>
+
+<body>
+    <form action="" method="post">
+        <select id="operator" style="text-align: center;" required>
+            <option value="">-</option>
+            <option value="bogor">Bogor</option>
+            <option value="depok">Depok</option>
+            <option value="lainnya">Lainnya</option>
+        </select>
+        <button id="btn-tujuan">Hitung</button>
+    </form>
+    <h1 id="hasil">Tarifnya adalah sebesar: <b>0</b></h1>
+
+    <script>
+        let btn = document.getElementById("btn-tujuan");
+        btn.addEventListener("click", hitung);
+
+        function hitung(e) {
+            e.preventDefault(); // Mencegah agar web browser melakukan refresh otomatis
+            let btn_tujuan = document.getElementById("btn-tujuan");
+            let opt = document.getElementById("operator").value;
+            let berat = 10;
+            let hasil = 0;
+
+            if (opt == "bogor") hasil = berat * 2000;
+            else if (opt == "depok") hasil = berat * 4000;
+            else if (opt == "lainnya") hasil = berat * 6000;
+            else {
+                hasil = 0;
+            }
+            document.getElementById('hasil').innerHTML = `Tarifnya adalah sebesar: <b>${hasil}</b>`;
+        }
+    </script>
+</body>
+
+</html>
