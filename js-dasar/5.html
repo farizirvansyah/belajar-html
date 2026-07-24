@@ -9,7 +9,13 @@
 
 <body>
     <form action="" method="post">
+        <label for="operator">Isi Kota Tujuan</label>
+        <br>
         <input type="text" name="" id="operator">
+        <br>
+        <label for="berat">Isi Berat</label>
+        <br>
+        <input type="number" id="berat" placeholder="Masukkan Berat (g)">
         <!-- <select id="operator" style="text-align: center;" required>
             <option value="">-</option>
             <option value="bogor">Bogor</option>
@@ -28,16 +34,26 @@
             e.preventDefault(); // Mencegah agar web browser melakukan refresh otomatis
             let btn_tujuan = document.getElementById("btn-tujuan");
             let opt = document.getElementById("operator").value.toLowerCase().trim();
-            let berat = 10000;
+            let berat = parseInt(document.getElementById("berat").value.trim());
             let perGram = berat / 1000;
             let hasil = 0;
 
+            if (berat < 0 ) {
+                alert("Tidak Boleh Minus")
+                return
+            }
             if (opt == "bogor") hasil = perGram * 2000;
             else if (opt == "depok") hasil = perGram * 4000;
             else {
                 hasil = perGram * 6000;
             }
-            document.getElementById('hasil').innerHTML = `Tarifnya adalah sebesar: <b>${hasil}</b>`;
+            // Format Penulisan Rupiah 
+            // const formatRupiah = new Intl.NumberFormat('id-ID', {
+            //     style: 'currency',
+            //     currency: 'IDR',
+            //     minimumFractionDigits: 2
+            // }).format(hasil);
+            document.getElementById('hasil').innerHTML = `Tarifnya adalah sebesar: <b>${hasil.toLocaleString("id-ID")}</b>`;
         }
     </script>
 </body>
