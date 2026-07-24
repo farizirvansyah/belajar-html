@@ -16,18 +16,17 @@
             <option value="depok">Depok</option>
             <option value="lainnya">Lainnya</option>
         </select>
-        <button id="btn-tujuan">Hitung</button>
+        <button id="btn-hitung">Hitung</button>
     </form>
     <h1 id="hasil">Tarifnya adalah sebesar: <b>0</b></h1>
 
     <script>
-        let btn = document.getElementById("btn-tujuan");
+        let btn = document.getElementById("btn-hitung");
         btn.addEventListener("click", hitung);
 
         function hitung(e) {
             e.preventDefault(); // Mencegah agar web browser melakukan refresh otomatis
             // Deklarasi Variabel
-            let btn_tujuan = document.getElementById("btn-tujuan");
             let berat = parseFloat(document.getElementById("in-berat").value);
             let opt = document.getElementById("operator").value;
             let hasil = 0;
@@ -43,14 +42,14 @@
             else {
                 hasil = 0;
             }
-            // Format Penulsian Rupiah 
-            const formatRupiah = new Intl.NumberFormat('id-ID', {
-                style: 'currency',
-                currency: 'IDR',
-                minimumFractionDigits: 0
-            }).format(hasil);
+            // Format Penulisan Rupiah 
+            // const formatRupiah = new Intl.NumberFormat('id-ID', {
+            //     style: 'currency',
+            //     currency: 'IDR',
+            //     minimumFractionDigits: 2
+            // }).format(hasil);
 
-            document.getElementById('hasil').innerHTML = `Tarifnya adalah sebesar: <b>${formatRupiah}</b>`;
+            document.getElementById('hasil').innerHTML = `Tarifnya adalah sebesar: <b>Rp${hasil.toLocaleString("id-ID")}</b>`;
         }
     </script>
 </body>
