@@ -42,22 +42,44 @@
             }
         ];
         let table_mhs = document.getElementById("table-mhs");
+
         table_mhs.innerHTML = "";
-        for (let i = 0; i < students.length; i++) {
+
+        for (let index = 0; index < students.length; index++) {
             let baris = document.createElement("tr");
             baris.innerHTML = `
-            <td>${i+1}</td>
-            <td>${students[i].nim}</td>
-            <td>${students[i].nama}</td>
-            <td>${students[i].prodi}</td>
-            <td>${students[i].gender}</td>
-            <td>${students[i].alamat}</td>
-            <td><button type="button">Hapus</button></td>
+            <td>${index+1}</td>
+            <td>${students[index].nim}</td>
+            <td>${students[index].nama}</td>
+            <td>${students[index].prodi}</td>
+            <td>${students[index].gender}</td>
+            <td>${students[index].alamat}</td>
+            <td><button class='btn-hapus' data-hapus='${index}'">Hapus</button></td>
             `;
             table_mhs.appendChild(baris);
-            // const element = $students[i];
-
         }
+        // Aksi Hapus
+        table_mhs.addEventListener("click", function (e) {
+            if (event.target.classList.contains('btn-hapus')) {
+                let indexData = e.target.getAttribute('data-hapus');
+                students.splice(indexData, 1);
+                table_mhs.innerHTML = "";
+
+                for (let index = 0; index < students.length; index++) {
+                    let baris = document.createElement("tr");
+                    baris.innerHTML = `
+            <td>${index+1}</td>
+            <td>${students[index].nim}</td>
+            <td>${students[index].nama}</td>
+            <td>${students[index].prodi}</td>
+            <td>${students[index].gender}</td>
+            <td>${students[index].alamat}</td>
+            <td><button class='btn-hapus' data-hapus='${index}'">Hapus</button></td>
+            `;
+                    table_mhs.appendChild(baris);
+                }
+            }
+        });
     </script>
 </body>
 
