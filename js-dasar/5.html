@@ -37,23 +37,35 @@
             let berat = parseInt(document.getElementById("berat").value.trim());
             let perGram = berat / 1000;
             let hasil = 0;
+            const kotanya = ["bogor", "depok", "jakarta", "bandung", "bekasi"];
 
-            if (berat < 0 ) {
+            if (berat < 0) {
                 alert("Tidak Boleh Minus")
-                return
+                window.location.reload();
             }
-            if (opt == "bogor") hasil = perGram * 2000;
-            else if (opt == "depok") hasil = perGram * 4000;
+
+            if (kotanya.includes(opt) && opt == "bogor") hasil = perGram * 2000;
+            else if (kotanya.includes(opt) && opt == "depok") hasil = perGram * 4000;
+            else if (kotanya.includes(opt) && opt == "jakarta" || kotanya.includes(opt) &&
+                opt == "bandung" || kotanya.includes(opt) && opt == "bekasi") hasil = perGram * 6000;
             else {
-                hasil = perGram * 6000;
+                hasil = "<span style:'color:red'>Maaf, kota tidak tersedia</span>";
             }
+
+
+            // if (opt == "bogor") hasil = perGram * 2000;
+            // else if (opt == "depok") hasil = perGram * 4000;
+            // else {
+            //     hasil = perGram * 6000;
+            // }
             // Format Penulisan Rupiah 
             // const formatRupiah = new Intl.NumberFormat('id-ID', {
             //     style: 'currency',
             //     currency: 'IDR',
             //     minimumFractionDigits: 2
             // }).format(hasil);
-            document.getElementById('hasil').innerHTML = `Tarifnya adalah sebesar: <b>${hasil.toLocaleString("id-ID")}</b>`;
+            document.getElementById('hasil').innerHTML =
+                `Tarifnya adalah sebesar: <b>${hasil.toLocaleString("id-ID")}</b>`;
         }
     </script>
 </body>
